@@ -17,7 +17,6 @@
     font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     display:block;
     float:center;
-    height:40px;
     width:100%;
     color: rgb(0, 51, 204);
     text-align: center;
@@ -35,6 +34,7 @@ background-color:#ff87cf;
     color:white;
     background-color:rgba(230,230,230,0.4);
     height:100%;
+    bottom: 70px;
     margin-left:10%;
     margin-right:10%;
     padding:12px;
