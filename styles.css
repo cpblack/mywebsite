@@ -19,6 +19,7 @@
     display: block;
     color: red;
     text-align: center;
+    height:40px;
     text-decoration: none;
 }
 .navbar ul li a:hover:not(.active) {
