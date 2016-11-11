@@ -11,11 +11,11 @@
     height:40px;
     width:25%;
     float: left;
-    display: inline-block;
 }
 
 .navbar ul li a {
     font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    display:block;
     float:center;
     height:40px;
     width:25%;
