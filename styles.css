@@ -22,6 +22,7 @@
     color: rgb(0, 51, 204);
     text-align: center;
     text-decoration: none;
+    font-size:200%;
 }
 .navbar ul li a:hover:not(.active) {
     background-color: rgba(230, 179, 255,0.5);
