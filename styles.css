@@ -15,11 +15,11 @@
 
 .navbar ul li a {
     font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    height:40px;
     float:center;
     display: block;
     color: red;
     text-align: center;
-    height:40px;
     text-decoration: none;
 }
 .navbar ul li a:hover:not(.active) {
