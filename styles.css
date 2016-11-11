@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #e5ebff;
 }
 
 .navbar ul li {
@@ -25,5 +25,5 @@
 background-color:#ff87cf;
 }
 body {
-    background-color:#e5ebff;
+    background-color:#333;
 }
