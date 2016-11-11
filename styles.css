@@ -8,6 +8,8 @@
 
 .navbar ul li {
     float: left;
+    margin: 5%
+    width: 20%
 }
 
 .navbar ul li a {
@@ -15,8 +17,6 @@
     display: block;
     color: red;
     text-align: center;
-    margin: 5%
-    width: 20%
     text-decoration: none;
 }
 .navbar ul li a:hover:not(.active) {
