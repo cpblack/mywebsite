@@ -34,6 +34,10 @@ background-color:#ff87cf;
 #main {
     color:white;
     background-color:rgba(230,230,230,0.4);
+    height:100%;
+    margin-left:10%;
+    margin-right:10%;
+    width:80%;
 }
 body {
     background-image: url("background.jpg");
