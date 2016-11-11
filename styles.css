@@ -23,7 +23,7 @@
     text-decoration: none;
 }
 .navbar ul li a:hover:not(.active) {
-    background-color: #992dff;
+    background-color: rgba(230, 179, 255,0.5);
 }
 
 .active {
