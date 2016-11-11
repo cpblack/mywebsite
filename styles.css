@@ -13,6 +13,8 @@
 
 .navbar ul li a {
     font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    float:center;
+    width:80%;
     display: block;
     color: red;
     text-align: center;
