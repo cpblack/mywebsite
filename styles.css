@@ -17,6 +17,13 @@ ul li a {
     padding: 14px 16px;
     text-decoration: none;
 }
+ul li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+background-color:#4CAF50;
+}
 body {
     background-color:#e5ebff;
 }
