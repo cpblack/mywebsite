@@ -1,15 +1,15 @@
 #main {
     color:blue;
 }
-#navbar {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
-#navbar li {
+ul li {
 width:20%;
 }
-#navbar li a {
+ul li a {
     text-decoration:none
 }
 body {
