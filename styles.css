@@ -30,6 +30,9 @@
 .active {
 background-color:#ff87cf;
 }
+.main {
+    color:white;
+}
 body {
     background-image: url("background.jpg");
     background-size: cover;
