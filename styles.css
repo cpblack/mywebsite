@@ -15,7 +15,7 @@
     display: block;
     color: red;
     text-align: center;
-    padding: 40px 40px;
+    padding: 40px 16x;
     text-decoration: none;
 }
 .navbar ul li a:hover:not(.active) {
