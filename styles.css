@@ -1,4 +1,4 @@
-ul {
+#navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -6,23 +6,23 @@ ul {
     background-color: #333;
 }
 
-ul li {
+#navbar li {
     float: left;
 }
 
-ul li a {
+#navbar li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-ul li a:hover:not(.active) {
-    background-color: #111;
+#navbar li a:hover:not(.active) {
+    background-color: #992dff;
 }
 
 .active {
-background-color:#4CAF50;
+background-color:#ff87cf;
 }
 body {
     background-color:#e5ebff;
