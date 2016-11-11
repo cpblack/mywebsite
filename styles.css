@@ -9,6 +9,9 @@
 #navbar li {
 width:20%;
 }
+#navbar li a {
+    text-decoration:none
+}
 body {
     background-color:#e5ebff;
 }
