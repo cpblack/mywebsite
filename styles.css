@@ -8,6 +8,7 @@
 }
 
 .navbar ul li {
+    height:40px;
     float: left;
     display: inline-block;
 }
@@ -15,6 +16,7 @@
 .navbar ul li a {
     font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
     float:center;
+    height:40px;
     color: rgb(0, 51, 204);
     text-align: center;
     text-decoration: none;
