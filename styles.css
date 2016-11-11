@@ -33,6 +33,7 @@ background-color:#ff87cf;
 }
 #main {
     color:white;
+    background-color:rgba(230,230,230,0.4);
 }
 body {
     background-image: url("background.jpg");
