@@ -28,6 +28,6 @@ background-color:#ff87cf;
 body {
     background-image: url("background.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    /*background-repeat: no-repeat;*/
     background-position: center center;
 }
