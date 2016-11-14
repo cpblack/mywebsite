@@ -47,24 +47,24 @@ background-color:#ff87cf;
 }
 .hyperlink:link {
     text-decoration: none;
-    color: green;
+    color: #6cd18f;
 }
 
 /* visited link */
 .hyperlink:visited {
     text-decoration: none;
-    color: green;
+    color: #6cd18f;
 }
 
 /* mouse over link */
 .hyperlink:hover {
-    color: purple;
+    color: #6cd1b9;
     text-decoration: underline;
 }
 
 /* selected link */
 .hyperlink:active {
-    color: violet;
+    color: #6cd1b9;
     text-decoration: underline;
 }
 body {
