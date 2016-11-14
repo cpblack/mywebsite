@@ -18,5 +18,5 @@ function readTextFile(filein)
     rawFile.send(null);
 }
 function index(){
-  getText("ilovevideogames");
+  readTextFile("ilovevideogames");
 }
