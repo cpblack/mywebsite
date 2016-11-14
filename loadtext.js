@@ -1,15 +1,19 @@
-function getText(){
+function getText(name){
+  document.getElementById(name).innerHTML = "Loading...";
   var client = new XMLHttpRequest();
-  client.open('GET', '/text/ilovevideogames.txt');
+  client.open('GET', '/text/'+name+'.txt');
   client.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       var response = JSON.parse(xmlhttp.responseText);
       if (xmlhttp.status === 200 && response.status === 'OK') {
-        document.getElementById("ilovevideogames").innerHTML = client.responseText;
+        document.getElementById(name).innerHTML = client.responseText;
       } else {
-        document.getElementById("ilovevideogames").innerHTML = "Failed to load."
+        document.getElementById(name).innerHTML = "Failed to load."
       }
     }
   }
   client.send();
+}
+function texts(){
+  getText("ilovevideogames");
 }
