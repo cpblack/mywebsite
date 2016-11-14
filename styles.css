@@ -1,6 +1,6 @@
 .navbar ul {
     list-style-type: none;
-    margin: 0;
+    margin: 5px;
     margin-left:10%;
     margin-right:10%;
     padding: 0;
@@ -42,6 +42,8 @@ background-color:#ff87cf;
     width:80%;
 }
 body {
+    padding:0px;
+    margin:0px;
     background-image: url("congruent_pentagon.png");
     background-size: cover;
     /*background-repeat: no-repeat;*/
