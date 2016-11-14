@@ -47,24 +47,24 @@ background-color:#ff87cf;
 }
 .hyperlink:link {
     text-decoration: none;
-    color: #6cd18f;
+    color: #719987;
 }
 
 /* visited link */
 .hyperlink:visited {
     text-decoration: none;
-    color: #6cd18f;
+    color: #719987;
 }
 
 /* mouse over link */
 .hyperlink:hover {
-    color: #6cd1b9;
+    color: #719799;
     text-decoration: underline;
 }
 
 /* selected link */
 .hyperlink:active {
-    color: #6cd1b9;
+    color: #719799;
     text-decoration: underline;
 }
 body {
