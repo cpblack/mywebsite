@@ -14,6 +14,6 @@ function getText(name){
   }
   client.send();
 }
-function texts(){
+function loadTexts(){
   getText("ilovevideogames");
 }
