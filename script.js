@@ -7,9 +7,12 @@ function getText(){
       if (xmlhttp.status === 200 && response.status === 'OK') {
         document.getElementById("ilovevideogames").innerHTML = client.responseText;
       } else {
-        document.getElementById("ilovevideogames").innerHTML = "Failed to load."
+        document.getElementById("ilovevideogames").innerHTML = "Failed to load.";
       }
     }
   }
   client.send();
+}
+function index(){
+  getText("ilovevideogames");
 }
