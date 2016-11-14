@@ -17,4 +17,3 @@ function getText(stringIn){
 function index(){
   getText("ilovevideogames");
 }
-index();
