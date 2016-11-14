@@ -1,18 +1,22 @@
-function getText(stringIn){
-  document.getElementById(stringIn).innerHTML = "Loading...";
-  var client = new XMLHttpRequest();
-  client.open('GET', '/text/'+stringIn+'.txt');
-  client.onreadystatechange = function() {
-    if (client.readyState == XMLHttpRequest.DONE || client.readyState == 4) {
-      var response = JSON.parse(client.responseText);
-      if (client.status === 200 && client.status === 'OK') {
-        document.getElementById(stringIn).innerHTML = client.responseText;
-      } else {
-        document.getElementById(stringIn).innerHTML = "Failed to load.";
-      }
+function readTextFile(file)
+{
+    document.getElementById(file).innerHTML = "Loading..."
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", "/file/"+file+".txt", false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                document.getElementById(file).innerHTML = allText
+            } else {
+                document.getElementById(file).innerHTML = "Failed."
+            }
+        }
     }
-  }
-  client.send();
+    rawFile.send(null);
 }
 function index(){
   getText("ilovevideogames");
