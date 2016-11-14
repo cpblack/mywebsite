@@ -1,4 +1,4 @@
-function getText(){
+function getText(stringIn){
   var client = new XMLHttpRequest();
   client.open('GET', '/text/ilovevideogames.txt');
   client.onreadystatechange = function() {
