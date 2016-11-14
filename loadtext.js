@@ -3,7 +3,7 @@ function getText(name){
   var client = new XMLHttpRequest();
   client.open('GET', '/text/'+name+'.txt');
   client.onreadystatechange = function() {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
+    if (xhr.readyState == 4) {
       var response = JSON.parse(xmlhttp.responseText);
       if (xmlhttp.status === 200 && response.status === 'OK') {
         document.getElementById(name).innerHTML = client.responseText;
