@@ -1,13 +1,14 @@
 function getText(stringIn){
+  document.getElementById(stringIn).innerHTML = "Loading...";
   var client = new XMLHttpRequest();
-  client.open('GET', '/text/ilovevideogames.txt');
+  client.open('GET', '/text/'+stringIn+'.txt');
   client.onreadystatechange = function() {
     if (xhr.readyState === XMLHttpRequest.DONE) {
       var response = JSON.parse(xmlhttp.responseText);
       if (xmlhttp.status === 200 && response.status === 'OK') {
-        document.getElementById("ilovevideogames").innerHTML = client.responseText;
+        document.getElementById(stringIn).innerHTML = client.responseText;
       } else {
-        document.getElementById("ilovevideogames").innerHTML = "Failed to load.";
+        document.getElementById(stringIn).innerHTML = "Failed to load.";
       }
     }
   }
