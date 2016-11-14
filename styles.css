@@ -75,6 +75,6 @@ body {
     /*background-repeat: no-repeat;*/
     background-position: top left;
 }
-header {
+.header {
     font-size:1.3em;
 }
