@@ -3,8 +3,7 @@ function readTextFile(file)
     document.getElementById(file).innerHTML = "Loading..."
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "/file/"+file+".txt", false);
-    rawFile.onreadystatechange = function ()
-    {
+    rawFile.onreadystatechange = function (){
         if(rawFile.readyState === 4)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
