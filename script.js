@@ -17,3 +17,7 @@ document.getElementById(stringIn).innerHTML = content
 function index(){
   readTextFile("ilovevideogames");
 }
+var host = "polished.tech"
+if (window.location.host == host && window.location.protocol != "https:") {
+  window.location.protocol = "https:"
+}
