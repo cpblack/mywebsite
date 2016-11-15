@@ -12,6 +12,7 @@ function readTextFile(filein)
                 document.getElementById(filein).innerHTML = "Failed."
             }
         }
+    }
     rawFile.send(null);
 }
 
