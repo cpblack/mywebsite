@@ -34,6 +34,8 @@
 background-color:#ff87cf;
 }
 #main {
+    padding-left: 0px;
+    padding-right: 0px;
     font-family: 'Prociono', serif;
     align-items: center;
     text-align:center;
