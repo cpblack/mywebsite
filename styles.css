@@ -23,7 +23,7 @@ font-family: rubberBiscuit;text-align:center;font-size:4em;color:#8f6aba;margin:
     display:block;
     float:center;
     width:100%;
-    color: rgb(255, 153, 153);
+    c;r: rgb(255, 153, 153);
     text-align: center;
     text-decoration: none;
     font-size:200%;
@@ -85,5 +85,5 @@ body {
 }
 @font-face {
     font-family: rubberBiscuit;
-    src: url("RUBBBB__.TTF");
+    src: url("RUBBBB__.TTF") format('truetype');
 }
