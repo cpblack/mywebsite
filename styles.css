@@ -34,18 +34,15 @@
 background-color:#ff87cf;
 }
 #main {]
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding:1%;
     font-family: 'Prociono', serif;
     align-items: center;
     text-align:center;
     color:rgb(255, 255, 204);
     background-color:rgba(120,120,120,0.4);
     bottom: 70px;
-    margin-left:10%;
-    margin-right:10%;
+    margin-left:9%;
+    margin-right:9%;
     width:80%;
 }
 .hyperlink:link {
