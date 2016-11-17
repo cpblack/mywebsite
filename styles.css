@@ -10,6 +10,7 @@
     background-color: rgba(255, 230, 255,0.5);
 }
 
+
 .navbar ul li {
     height:40px;
     width:25%;
@@ -80,4 +81,8 @@ body {
 }
 .header {
     font-size:1.3em;
+}
+@font-face {
+    font-family: rubberBiscuit;
+    src: url("RUBBBB__.TTF");
 }
