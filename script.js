@@ -15,7 +15,7 @@ document.getElementById(stringIn).innerHTML = content
 }
 
 function index(){
-  readTextFile("ilovevideogames");
+  loadFile("ilovevideogames");
 }
 if (window.location.protocol != "https:") {
   window.location.protocol = "https:"
