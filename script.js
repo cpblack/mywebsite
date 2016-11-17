@@ -20,7 +20,6 @@ console.log(stringIn+": Failure.");
 }
 
 function index(){
-  loadFile("ilovevideogames");
 }
 if (window.location.protocol != "https:") {
   window.location.protocol = "https:"
