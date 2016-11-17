@@ -40,7 +40,7 @@
 .active {
 background-color:#ff87cf;
 }
-#main {]
+#main {
     padding-left:1%;
     padding-right:1%;
     padding-top:1.5%;
@@ -53,7 +53,7 @@ background-color:#ff87cf;
     bottom: 70px;
     margin-left:9%;
     margin-right:9%;
-    width:80%;
+    width:78%;
 }
 .hyperlink:link {
     text-decoration: none;
