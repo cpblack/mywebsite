@@ -33,7 +33,9 @@
 .active {
 background-color:#ff87cf;
 }
-#main {
+#main {]
+    padding-top: 12px;
+    padding-bottom: 12px;
     padding-left: 0px;
     padding-right: 0px;
     font-family: 'Prociono', serif;
@@ -44,7 +46,6 @@ background-color:#ff87cf;
     bottom: 70px;
     margin-left:10%;
     margin-right:10%;
-    padding:12px;
     width:80%;
 }
 .hyperlink:link {
