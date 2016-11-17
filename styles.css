@@ -51,9 +51,10 @@ background-color:#ff87cf;
     color:rgb(255, 255, 204);
     background-color:rgba(120,120,120,0.4);
     bottom: 70px;
-    margin-left:9%;
-    margin-right:9%;
+    margin-left:10%;
+    margin-right:10%;
     width:78%;
+    padding-left:1%;
 }
 .hyperlink:link {
     text-decoration: none;
