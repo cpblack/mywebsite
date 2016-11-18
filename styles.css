@@ -84,7 +84,9 @@ body {
     background-image: url("background.jpg");
     background-size: cover;
     /*background-repeat: no-repeat;*/
+    background-repeat: repeat;
     background-position: top left;
+    background-size: 100px 100px;
 }
 .header {
     font-size:1.3em;
