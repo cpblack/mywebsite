@@ -1,0 +1,55 @@
+<head>
+  <script type="text/javascript">
+   function getBrowser() { 
+    var browser = "Error."
+     if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) {
+        browser='Opera';
+    } else if(navigator.userAgent.indexOf("Chrome") != -1 ) {
+        browser='Chrome';
+    } else if(navigator.userAgent.indexOf("Safari") != -1) {
+        browser='Safari';
+    } else if(navigator.userAgent.indexOf("Firefox") != -1 )  {
+         browser='Firefox';
+    } else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )){
+      browser='IE'; 
+    } else {
+       browser='unknown';
+    }
+    return browser
+    }
+    function hasWebkit() {
+    var output = "error"
+    if(navigator.userAgent.indexOf('AppleWebKit') != -1){
+      output = true;
+    } else {
+      output = false;
+    }
+    return output
+    }
+   function bodyLoad(){
+   var element = document.getElementById("MyName");
+   console.log(navigator.userAgent);
+   console.log(getBrowser());
+   if (!hasWebkit()) {
+var p = document.createElement("p");
+var t = document.createTextNode("Warning! Webkit not detected! Document may not display correctly.");
+p.appendChild(t)
+var e = document.getElementById("warning");
+e.appendChild(p)
+   }
+   }
+    </script>
+
+    </body>
+    </html>
+  </script>
+</head>
+<body onload="bodyLoad()" style="margin:0px;background: linear-gradient(to right, #d3f4ff ,  #fae8ff);">
+<div id="warning" style="margin:0px;padding:0px;color:black;"></div>
+<p id="MyName" style="-webkit-text-stroke-width: 1px;-webkit-text-stroke-color: white;color:#ff7aad;text-align:center;font-size:4em;margin:0px;padding:0px;">Caleb Black</p>
+<div id="main" style="padding:0px;margin:0px;margin-top:0px;margin-bottom:0px;margin-left:10%;margin-right:10%;background-color:rgba(255, 255, 255,0.3);">
+<div id="mainstyling" style="margin:0px;padding:0px;text-align:center;color:#ffe8fe;font-family:Palatino;">
+<p style="margin:0px;font-size:2em;">Example Text<br><br><br><br><br><br><br><br><br></p>
+</div>
+</div>
+</body>
