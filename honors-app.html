@@ -1,0 +1,39 @@
+<head>
+  <script type="text/javascript">
+    function hasWebkit() {
+    var output = "error"
+    if(navigator.userAgent.indexOf('AppleWebKit') != -1){
+      output = true;
+    } else {
+      output = false;
+    }
+    return output
+    }
+   function bodyLoad(){
+   var element = document.getElementById("MyName");
+   if (!hasWebkit()) {
+var p = document.createElement("p");
+var t = document.createTextNode("Warning! Webkit not detected! You may not be able to correctly view my document.");
+p.appendChild(t);
+document.getElementById("warning").appendChild(p);
+   }
+   }
+    </script>
+
+    </body>
+    </html>
+  </script>
+</head>
+<body onload="bodyLoad()" style="margin:0px;background-color:rgb(211, 243, 245);background: linear-gradient(to right, rgb(211, 243, 245),  #eaf2ff);">
+<div id="warning" style="margin:0px;padding:0px;color:black;"></div>
+<div id="main" style="padding:0px;margin:0px;margin-top:0px;margin-bottom:0px;height:100%;margin-left:5%;margin-right:5%;background-color:rgba(255, 255, 255,0.3);">
+<p id="MyName" style="-webkit-text-stroke-width: 1px;-webkit-text-stroke-color: #ab99c1;color:#638ec3;text-align:center;font-size:4em;margin:0px;padding:0px;">Caleb Black</p>
+<div id="mainstyling" style="margin:0px;padding:1%;text-align:center;color: #a9a9a9;;font-family:Palatino;">
+<p style="margin:0px;font-size:2em;">
+
+Lorizzle ipsizzle dolizzle sit amizzle, fo shizzle my nizzle doggy . Nullam sapien velit, boofron volutpizzle, suscipizzle mah nizzle, pizzle shiznit, arcu. Pellentesque brizzle tortor. Sizzle eros. Crackalackin shit dapibizzle turpis tempus bling bling. Bizzle pellentesque nibh fo shizzle my nizzle fo shizzle. Vestibulum i saw beyonces tizzles and my pizzle went crizzle tortor. Nizzle boofron rhoncus fo shizzle. In hac mofo platea go to hizzle. Shizzle my nizzle crocodizzle dapibizzle. Curabitizzle tellizzle yo, pretizzle mammasay mammasa mamma oo sa, mattizzle ac, eleifend yo mamma, nunc. Funky fresh suscipizzle. Fo semper ma nizzle sed doggy.
+
+</p>
+</div>
+</div>
+</body>
