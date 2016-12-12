@@ -1,0 +1,2 @@
+function loadPage(number){
+}
