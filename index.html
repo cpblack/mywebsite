@@ -2,10 +2,13 @@
 <script src="predictschools.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="bodyLoad();">
   <p id="p1">Hello World!</p>
+  <input type="number" maxlength="512" id="yearInput"/>
+  <button id="yearSubmit">Submit</button>
 
   <script>
     document.getElementById("p1").innerHTML = example(5);
   </script>
+
 </body>
