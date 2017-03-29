@@ -108,6 +108,6 @@ function generateSchools(schools,revenueIn) {
 }
 window.addEventListener('load', init);
 function init(){
-document.getElementById("yearSubmit").addEventListener("click", buttonSubmit());
+document.getElementById("yearSubmit").addEventListener("click", buttonSubmit);
 console.log("hi")
 }
