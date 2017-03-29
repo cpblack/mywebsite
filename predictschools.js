@@ -66,7 +66,7 @@ function getSchools(schools, year) {
     // For Each Year
     
     currentFunds += getTotalRevenue(schools);
-    var getOtherStaffInfo = getOtherStaffInfo(schools);
+    var otherStaffInfo = getOtherStaffInfo(schools);
     currentFunds += getOtherStaffInfo[1];
     var get = generateSchools(schools,currentFunds);
     schools = get[0];
