@@ -1,5 +1,4 @@
 var baseSchools = [{name:"AISU",students:2000,age:3,teachers:80,summerTraining:false,PLCSupport:false,expertOnCall:false}]
-Object.freeze(baseSchools);
 function schoolRevenue(school) {
   var students = school.students;
   var yearNumber = school.age;
@@ -22,7 +21,7 @@ function random(){
 */
 function example(years){
   var get = getSchools(baseSchools,years);
-  return schoolsToText(get[0]);
+  return schoolsToText(get[0])+" Leftover funds: "+get[1];
 }
 function schoolsToText(schools){
   var output = ""
@@ -57,6 +56,7 @@ function getOtherStaffInfo(schools){
   staffCount[1] = Math.max(staffCount[1]);
   staffCount[2] = Math.max(staffCount[2]);
   revenue = 20000 * (staffCount[0]+staffCount[1]+staffCount[2]);
+  console.log(revenue);
   return [staffCount,revenue];
 }  
 function getSchools(schools, year) {
@@ -66,12 +66,12 @@ function getSchools(schools, year) {
   while (currentYear < year) {
     // For Each Year
     
-    currentFunds += getTotalRevenue(schools);
-    var otherStaffInfo = getOtherStaffInfo(schools);
-    currentFunds += getOtherStaffInfo[1];
     var get = generateSchools(schools,currentFunds);
     schools = get[0];
     currentFunds = get[1];
+    currentFunds += getTotalRevenue(schools);
+    var otherStaffInfo = getOtherStaffInfo(schools);
+    currentFunds += getOtherStaffInfo[1];
     currentYear += 1;
     schools = age(schools,1);
   }
