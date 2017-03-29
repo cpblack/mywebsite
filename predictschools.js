@@ -18,12 +18,12 @@ function randomIntBetween(min,max){
 function random(){
   return Math.random();
 }
+*/
 function buttonSubmit(){
 var value = example(document.getElementById("yearInput").value);
 console.log(value);
 document.getElementById("p1").innerHTML = value;
 }
-*/
 function example(years){
   var get = getSchools(baseSchools,years);
   return schoolsToText(get[0])+" Leftover funds: "+get[1];
@@ -108,6 +108,5 @@ function generateSchools(schools,revenueIn) {
 }
 
 function bodyLoad(){
-
-document.getElementById("yearSubmit").addEventListener("click", buttonSubmit(), false);
+document.getElementById("yearSubmit").addEventListener("click", buttonSubmit());
 }
