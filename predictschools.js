@@ -8,7 +8,6 @@ function schoolRevenue(school) {
   if (yearNumber == 0) {
     revenueOfTrainingTeachers = numberOfTeachers * 500;
   }
-  //Logger.log("Student Licensing Fees: "+studentLicensingFees+", Revenue from Training Teachers: "+revenueOfTrainingTeachers);
   
   return (studentLicensingFees * 15 / 25 )+ revenueOfTrainingTeachers;
 }
@@ -22,8 +21,6 @@ function random(){
 */
 function example(years){
   var get = getSchools(baseSchools,years);
-  //Logger.log(get[0]);
-  //Logger.log("Leftover Funds: "+get[1]);
   return schoolsToText(get[0]);
 }
 function schoolsToText(schools){
@@ -62,12 +59,10 @@ function getOtherStaffInfo(schools){
   return [staffCount,revenue];
 }  
 function getSchools(schools, year) {
-  //Logger.log("Year: "+year);
   var originalSchools = schools;
   var currentYear = 0;
   var currentFunds = 0;
   while (currentYear < year) {
-    //Logger.log("Ran");
     // For Each Year
     
     currentFunds += getTotalRevenue(schools);
@@ -92,7 +87,6 @@ function getTotalRevenue(schools) {
   for (var i = 0; i < schools.length; i++){
     output += schoolRevenue(schools[i]);
   }
-  //Logger.log("Total Revenue: "+output);
   return output;
 }
 function generateSchools(schools,revenue) {
