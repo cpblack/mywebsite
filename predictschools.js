@@ -1,4 +1,5 @@
 var baseSchools = [{name:"AISU",students:2000,age:3,teachers:80,summerTraining:false,PLCSupport:false,expertOnCall:false}]
+Object.freeze(baseSchools);
 function schoolRevenue(school) {
   var students = school.students;
   var yearNumber = school.age;
