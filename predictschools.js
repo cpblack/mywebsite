@@ -8,8 +8,8 @@ function schoolRevenue(school) {
   if (yearNumber == 0) {
     revenueOfTrainingTeachers = numberOfTeachers * 500;
   }
-  
-  return (studentLicensingFees * 15 / 25 )+ revenueOfTrainingTeachers;
+  var output = (studentLicensingFees * 15 / 25 )+ revenueOfTrainingTeachers;
+  return output;
 }
 /*
 function randomIntBetween(min,max){
@@ -56,8 +56,8 @@ function getOtherStaffInfo(schools){
   staffCount[1] = Math.max(staffCount[1]);
   staffCount[2] = Math.max(staffCount[2]);
   revenue = 20000 * (staffCount[0]+staffCount[1]+staffCount[2]);
-  console.log(revenue);
-  return [staffCount,revenue];
+  var output = [staffCount,revenue];
+  return output;
 }  
 function getSchools(schools, year) {
   var originalSchools = schools;
@@ -71,7 +71,7 @@ function getSchools(schools, year) {
     currentFunds = get[1];
     currentFunds += getTotalRevenue(schools);
     var otherStaffInfo = getOtherStaffInfo(schools);
-    currentFunds += getOtherStaffInfo[1];
+    currentFunds += otherStaffInfo[1];
     currentYear += 1;
     schools = age(schools,1);
   }
@@ -90,13 +90,14 @@ function getTotalRevenue(schools) {
   }
   return output;
 }
-function generateSchools(schools,revenue) {
+function generateSchools(schools,revenueIn) {
+  var revenueOut = revenueIn;
   var costPerTeamMemberPerSchool = 30000;
   var trainingTeamSize = 5;
-  var maximumTeamMembers = Math.floor(revenue / costPerTeamMemberPerSchool);
-  for (var i = 0; revenue >= costPerTeamMemberPerSchool * trainingTeamSize & i < Math.floor(maximumTeamMembers/trainingTeamSize); i++) {
+  var maximumTeamMembers = Math.floor(revenueIn / costPerTeamMemberPerSchool);
+  for (var i = 0; revenueIn >= costPerTeamMemberPerSchool * trainingTeamSize & i < Math.floor(maximumTeamMembers/trainingTeamSize); i++) {
     schools.push({name:"New School",students:200,teachers:8,age:0,summerTraining:false,PLCSupport:false,expertOnCall:false});
-    revenue -= trainingTeamSize * costPerTeamMemberPerSchool;
+    revenueIn -= trainingTeamSize * costPerTeamMemberPerSchool;
   }
-  return [schools,revenue];
+  return [schools,revenueIn];
 }
