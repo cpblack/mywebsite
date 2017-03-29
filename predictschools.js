@@ -21,7 +21,7 @@ function random(){
 */
 function buttonSubmit(){
 var value = example(document.getElementById("yearInput").value);
-console.log(value);
+console.log(document.getElementById("yearInput").value);
 document.getElementById("p1").innerHTML = value;
 }
 function example(years){
@@ -106,7 +106,8 @@ function generateSchools(schools,revenueIn) {
   }
   return [schools,revenueIn];
 }
-
-function bodyLoad(){
+window.addEventListener('load', init);
+function init(){
 document.getElementById("yearSubmit").addEventListener("click", buttonSubmit());
+console.log("hi")
 }
