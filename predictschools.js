@@ -39,7 +39,7 @@ function schoolsToText(schools){
 }
 function getOtherStaffInfo(schools){
   var revenue = 0;
-  var staffCount = [0,0,0]
+  var staffCount = [0,0,0];
   var revenuePerStaff;
   for (var i = 0; i < schools.length; i++) {
     if (schools[i].summerTraining) {
