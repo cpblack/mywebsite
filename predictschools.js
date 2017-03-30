@@ -8,7 +8,7 @@ function schoolRevenue(school) {
   var studentLicensingFees = students * 50;
   var numberOfTeachers = school.teachers;
   var revenueOfTrainingTeachers = 0;
-  if (yearNumber == 0) {
+  if (yearNumber === 0) {
     revenueOfTrainingTeachers = numberOfTeachers * 500;
   }
   var output = (studentLicensingFees * 15 / 25 )+ revenueOfTrainingTeachers;
@@ -22,11 +22,16 @@ function random(){
   return Math.random();
 }
 */
+function setLeftovers(input){
+  document.getElementById("leftovers").innerHTML = "Leftovers: $"+input;
+}
 function buttonSubmit(){
 var value = document.getElementById("yearInput").value;
 value = Math.min(Math.max(document.getElementById("yearInput").value,0),150);
 document.getElementById("yearInput").value = value;
-document.getElementById("output").innerHTML = example(value);
+var calc = example(value);
+document.getElementById("output").innerHTML = calc[0];
+setLeftovers(calc[1]);
 }
 function increase(){
     document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) + 1;
@@ -38,7 +43,7 @@ function decrease(){
 }
 function example(years){
   var get = getSchools(getBaseSchools(),years);
-  return schoolsToText(get[0])+"<br>Leftover funds: "+get[1];
+  return [schoolsToText(get[0]),get[1]];
 }
 function schoolsToText(schools){
   var output = ""
