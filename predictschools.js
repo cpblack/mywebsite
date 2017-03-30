@@ -27,7 +27,6 @@ var value = document.getElementById("yearInput").value;
 value = min(max(document.getElementById("yearInput").value,0),150);
 document.getElementById("yearInput").value = value;
 var output = example(value);
-console.log(value);
 document.getElementById("p1").innerHTML = value;
 }
 function increase(){
