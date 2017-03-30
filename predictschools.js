@@ -23,8 +23,11 @@ function random(){
 }
 */
 function buttonSubmit(){
-var value = example(document.getElementById("yearInput").value);
-console.log(document.getElementById("yearInput").value);
+var value = document.getElementById("yearInput").value;
+value = min(max(document.getElementById("yearInput").value,0),150);
+document.getElementById("yearInput").value = value;
+var output = example(value);
+console.log(value);
 document.getElementById("p1").innerHTML = value;
 }
 function increase(){
@@ -32,7 +35,7 @@ function increase(){
     buttonSubmit();
 }
 function decrease(){
-    document.getElementById("yearInput").value = Math.max(parseInt(document.getElementById("yearInput").value) - 1,0);
+    document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) - 1;
     buttonSubmit();
 }
 function example(years){
