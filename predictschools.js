@@ -26,7 +26,7 @@ function buttonSubmit(){
 var value = document.getElementById("yearInput").value;
 value = Math.min(Math.max(document.getElementById("yearInput").value,0),150);
 document.getElementById("yearInput").value = value;
-document.getElementById("p1").innerHTML = example(value);
+document.getElementById("output").innerHTML = example(value);
 }
 function increase(){
     document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) + 1;
