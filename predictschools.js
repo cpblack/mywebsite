@@ -1,4 +1,4 @@
-function getBaseSchools {
+function getBaseSchools() {
 var baseSchools = [{name:"AISU",students:2000,age:3,teachers:80,summerTraining:false,PLCSupport:false,expertOnCall:false}]
 return JSON.parse(JSON.stringify(baseSchools));
 }
@@ -24,7 +24,7 @@ function random(){
 */
 function buttonSubmit(){
 var value = document.getElementById("yearInput").value;
-value = min(max(document.getElementById("yearInput").value,0),150);
+value = Math.min(Math.max(document.getElementById("yearInput").value,0),150);
 document.getElementById("yearInput").value = value;
 var output = example(value);
 document.getElementById("p1").innerHTML = value;
