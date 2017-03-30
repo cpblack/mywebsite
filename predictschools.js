@@ -88,12 +88,12 @@ function getSchools(schools, year) {
   while (currentYear < year) {
     // For Each Year
     
-    var get = generateSchools(schools,currentFunds);
-    schools = get[0];
-    currentFunds = get[1];
     currentFunds += getTotalRevenue(schools);
     var otherStaffInfo = getOtherStaffInfo(schools);
     currentFunds += otherStaffInfo[1];
+    var get = generateSchools(schools,currentFunds);
+    schools = get[0];
+    currentFunds = get[1];
     currentYear += 1;
     schools = age(schools,1);
   }
