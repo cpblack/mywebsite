@@ -1,4 +1,7 @@
+function getBaseSchools {
 var baseSchools = [{name:"AISU",students:2000,age:3,teachers:80,summerTraining:false,PLCSupport:false,expertOnCall:false}]
+return JSON.parse(JSON.stringify(baseSchools));
+}
 function schoolRevenue(school) {
   var students = school.students;
   var yearNumber = school.age;
@@ -33,7 +36,7 @@ function decrease(){
     buttonSubmit();
 }
 function example(years){
-  var get = getSchools(JSON.parse(JSON.stringify(baseSchools)),years);
+  var get = getSchools(getBaseSchools(),years);
   return schoolsToText(get[0])+"<br>Leftover funds: "+get[1];
 }
 function schoolsToText(schools){
