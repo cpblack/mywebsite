@@ -23,6 +23,7 @@ function random(){
 }
 */
 function setLeftovers(input){
+  input = parseInt(input);
   document.getElementById("leftovers").innerHTML = "Leftovers: $"+input;
 }
 function buttonSubmit(){
