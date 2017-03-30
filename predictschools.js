@@ -25,7 +25,7 @@ console.log(document.getElementById("yearInput").value);
 document.getElementById("p1").innerHTML = value;
 }
 function example(years){
-  var get = getSchools(baseSchools,years);
+  var get = getSchools(JSON.parse(JSON.stringify(baseSchools)),years);
   return schoolsToText(get[0])+" Leftover funds: "+get[1];
 }
 function schoolsToText(schools){
