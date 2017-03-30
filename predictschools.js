@@ -120,6 +120,7 @@ function generateSchools(schools,revenueIn) {
 }
 window.addEventListener('load', init);
 function init(){
+document.getElementById("output").innerHTML = example(0);
 document.getElementById("yearInput").value = 0;
 document.getElementById("yearSubmit").addEventListener("click", buttonSubmit);
 document.getElementById("increase").addEventListener("click", increase);
