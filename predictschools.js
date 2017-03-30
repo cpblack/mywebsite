@@ -24,6 +24,12 @@ var value = example(document.getElementById("yearInput").value);
 console.log(document.getElementById("yearInput").value);
 document.getElementById("p1").innerHTML = value;
 }
+function increase(){
+    document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) + 1;
+}
+function decrease(){
+    document.getElementById("yearInput").value = Math.max(parseInt(document.getElementById("yearInput").value) - 1,0);
+}
 function example(years){
   var get = getSchools(JSON.parse(JSON.stringify(baseSchools)),years);
   return schoolsToText(get[0])+"<br>Leftover funds: "+get[1];
@@ -109,5 +115,7 @@ function generateSchools(schools,revenueIn) {
 window.addEventListener('load', init);
 function init(){
 document.getElementById("yearSubmit").addEventListener("click", buttonSubmit);
+document.getElementById("increase").addEventListener("click", increase);
+document.getElementById("decrease").addEventListener("click", decrease);
 console.log("hi")
 }
