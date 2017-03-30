@@ -24,9 +24,6 @@ function random(){
 */
 function buttonSubmit(){
 var value = document.getElementById("yearInput").value;
-if (value == "") {
-value = 0;
-} 
 value = Math.min(Math.max(document.getElementById("yearInput").value,0),150);
 document.getElementById("yearInput").value = value;
 document.getElementById("p1").innerHTML = example(value);
@@ -123,7 +120,7 @@ function generateSchools(schools,revenueIn) {
 }
 window.addEventListener('load', init);
 function init(){
-buttonSubmit();
+document.getElementById("output").innerHTML = example(0);
 document.getElementById("yearInput").value = 0;
 document.getElementById("yearSubmit").addEventListener("click", buttonSubmit);
 document.getElementById("increase").addEventListener("click", increase);
