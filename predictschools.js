@@ -64,15 +64,15 @@ function getOtherStaffInfo(schools){
   var staffCount = [0,0,0];
   var revenuePerStaff;
   for (var i = 0; i < schools.length; i++) {
-    var deprecation = 1/(schools[i].age / 4);
+    var depreciation = 1/(schools[i].age / 4);
     if (schools[i].summerTraining) {
-      staffCount[0] += (1/4) * teachers * depreciation;
+      staffCount[0] += (1/4) * schools[i].teachers * depreciation;
     }
     if (schools[i].PLCSupport) {
-      staffCount[1] += (1/4) * teachers * depreciation;
+      staffCount[1] += (1/4) * schools[i].teachers * depreciation;
     }
     if (schools[i].expertOnCall) {
-      staffCount[2] += (1/4) * teachers * depreciation;
+      staffCount[2] += (1/4) * schools[i].teachers * depreciation;
     }
   }
   staffCount[0] = Math.max(staffCount[0]);
@@ -91,7 +91,9 @@ function getSchools(schools, year) {
     
     currentFunds += getTotalRevenue(schools);
     var otherStaffInfo = getOtherStaffInfo(schools);
+    console.log("Before: "+currentFunds);
     currentFunds += otherStaffInfo[1];
+    console.log("After: "+currentFunds);
     var get = generateSchools(schools,currentFunds);
     schools = get[0];
     currentFunds = get[1];
@@ -119,7 +121,7 @@ function generateSchools(schools,revenueIn) {
   var trainingTeamSize = 5;
   var maximumTeamMembers = Math.floor(revenueIn / costPerTeamMemberPerSchool);
   for (var i = 0; revenueIn >= costPerTeamMemberPerSchool * trainingTeamSize & i < Math.floor(maximumTeamMembers/trainingTeamSize); i++) {
-    schools.push({name:"New School",students:200,teachers:8,age:0,summerTraining:false,PLCSupport:false,expertOnCall:false});
+    schools.push({name:"New School",students:200,teachers:8,age:0,summerTraining:true,PLCSupport:true,expertOnCall:true});
     revenueIn -= trainingTeamSize * costPerTeamMemberPerSchool;
   }
   return [schools,revenueIn];
