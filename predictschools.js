@@ -26,9 +26,11 @@ document.getElementById("p1").innerHTML = value;
 }
 function increase(){
     document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) + 1;
+    buttonSubmit();
 }
 function decrease(){
     document.getElementById("yearInput").value = Math.max(parseInt(document.getElementById("yearInput").value) - 1,0);
+    buttonSubmit();
 }
 function example(years){
   var get = getSchools(JSON.parse(JSON.stringify(baseSchools)),years);
@@ -114,6 +116,7 @@ function generateSchools(schools,revenueIn) {
 }
 window.addEventListener('load', init);
 function init(){
+document.getElementById("yearInput").value = 0;
 document.getElementById("yearSubmit").addEventListener("click", buttonSubmit);
 document.getElementById("increase").addEventListener("click", increase);
 document.getElementById("decrease").addEventListener("click", decrease);
