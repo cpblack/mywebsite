@@ -64,14 +64,15 @@ function getOtherStaffInfo(schools){
   var staffCount = [0,0,0];
   var revenuePerStaff;
   for (var i = 0; i < schools.length; i++) {
+    var deprecation = 1/(schools[i].age / 4);
     if (schools[i].summerTraining) {
-      staffCount[0] += (1/4) * teachers;
+      staffCount[0] += (1/4) * teachers * depreciation;
     }
     if (schools[i].PLCSupport) {
-      staffCount[1] += (1/4) * teachers;
+      staffCount[1] += (1/4) * teachers * depreciation;
     }
     if (schools[i].expertOnCall) {
-      staffCount[2] += (1/4) * teachers;
+      staffCount[2] += (1/4) * teachers * depreciation;
     }
   }
   staffCount[0] = Math.max(staffCount[0]);
