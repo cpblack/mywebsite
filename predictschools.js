@@ -37,7 +37,7 @@ function schoolsToText(schools){
     }
     output += " old.";
     if (i < len - 1) {
-      output += " - "
+      output += "<br>"
     }
   }
   return output;
