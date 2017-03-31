@@ -65,7 +65,7 @@ function getOtherStaffInfo(schools){
   var staffCount = [0,0,0];
   var revenuePerStaff;
   for (var i = 0; i < schools.length; i++) {
-    var depreciation = 1/(schools[i].age / 4);
+    var depreciation = 1/Math.max(schools[i].age / 4,1);
     if (schools[i].summerTraining) {
       staffCount[0] += (1/4) * schools[i].teachers * depreciation;
     }
