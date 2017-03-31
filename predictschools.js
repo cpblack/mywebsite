@@ -67,13 +67,13 @@ function getOtherStaffInfo(schools){
   for (var i = 0; i < schools.length; i++) {
     var depreciation = 1/Math.max(schools[i].age / 4,1);
     if (schools[i].summerTraining) {
-      staffCount[0] += (1/4) * schools[i].teachers * depreciation;
+      staffCount[0] += (1/3) * schools[i].teachers * depreciation;
     }
     if (schools[i].PLCSupport) {
-      staffCount[1] += (1/4) * schools[i].teachers * depreciation;
+      staffCount[1] += (1/3) * schools[i].teachers * depreciation;
     }
     if (schools[i].expertOnCall) {
-      staffCount[2] += (1/4) * schools[i].teachers * depreciation;
+      staffCount[2] += (1/3) * schools[i].teachers * depreciation;
     }
   }
   staffCount[0] = Math.max(staffCount[0]);
