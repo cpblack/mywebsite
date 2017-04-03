@@ -194,7 +194,7 @@ function generateSchools(schools,revenueIn) {
 window.addEventListener('load', init);
 function generateStatistics(initialRevenue,totalSchools,supportRevenue,year){
     var outputParagraph = document.getElementById("statistics");
-    outputParagraph.innerHTML = "Year "+year+":<br>License Revenue: $"+initialRevenue+"<br>Total Schools: "+totalSchools+"<br>Support Services Revenue: $"+parseInt(supportRevenue);
+    outputParagraph.innerHTML = "Year "+year+":<br>License Revenue: $"+initialRevenue.toLocaleString('en')+"<br>Total Schools: "+totalSchools+"<br>Support Services Revenue: $"+parseInt(supportRevenue).toLocaleString('en');
 }
 function init(){
 //document.getElementById("output").innerHTML = example(0);
