@@ -1,3 +1,4 @@
+
 function getBaseSchools() {
 var baseSchools = [{name:"AISU",students:2000,age:3,teachers:80,summerTraining:false,PLCSupport:false,expertOnCall:false}]
 return JSON.parse(JSON.stringify(baseSchools));
@@ -22,6 +23,37 @@ function random(){
   return Math.random();
 }
 */
+function createTable(array) {
+var arrayLength = array.length;
+var theTable = document.createElement('table');
+
+
+// Note, don't forget the var keyword!
+for (var i = 0, tr, td; i < arrayLength; i++) {
+    tr = document.createElement('tr');
+    td = document.createElement('td');
+    td.appendChild(document.createTextNode(array[i].join(", ")));
+    td.setAttribute("style","display:block;text-align: center;vertical-align: middle;");
+    td.setAttribute("align","center");
+    tr.appendChild(td);
+    tr.setAttribute("style","display:block;");
+    //tr.setAttribute("style","width:100%;");
+    theTable.appendChild(tr);
+    
+}
+return theTable;
+}
+function schoolsToArray(schoolList){
+    var output = [];
+    for (var i = 0; i < schoolList.length;i++){
+        var temp = schoolList[i];
+        output[i] = [];
+        output[i][0] = temp.name;
+        output[i][1] = temp.students+" students";
+        output[i][2] = temp.age+" years old";
+    }
+    return output;
+}
 function setLeftovers(input){
   input = parseInt(input);
   document.getElementById("leftovers").innerHTML = "Leftovers: $"+input;
@@ -31,10 +63,21 @@ var value = document.getElementById("yearInput").value;
 value = Math.min(Math.max(document.getElementById("yearInput").value,0),150);
 document.getElementById("yearInput").value = value;
 var calc = example(value);
-document.getElementById("output").innerHTML = calc[0];
-setLeftovers(calc[1]);
+console.log(calc[0]);
+//document.getElementById("output").innerHTML = schoolsToText(calc[0]);
+
+var tableDiv = document.getElementById("tableDiv");
+while (tableDiv.hasChildNodes()) {
+    tableDiv.removeChild(tableDiv.lastChild);
 }
-function increase(){
+var table = createTable(schoolsToArray(calc[0]));
+table.setAttribute("style","display: block; max-height: 30%; overflow-y: auto;margin: 0px auto;");
+tableDiv.appendChild(table);
+tableDiv.setAttribute("style","position: relative;");
+table.setAttribute("align","center");
+//setLeftovers(calc[1]);
+}
+function increase(){ 
     document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) + 1;
     buttonSubmit();
 }
@@ -43,8 +86,9 @@ function decrease(){
     buttonSubmit();
 }
 function example(years){
+  console.log(years);
   var get = getSchools(getBaseSchools(),years);
-  return [schoolsToText(get[0]),get[1]];
+  return get;
 }
 function schoolsToText(schools){
   var output = ""
@@ -76,31 +120,47 @@ function getOtherStaffInfo(schools){
       staffCount[2] += (1/3) * schools[i].teachers * depreciation;
     }
   }
-  staffCount[0] = Math.max(staffCount[0]);
-  staffCount[1] = Math.max(staffCount[1]);
-  staffCount[2] = Math.max(staffCount[2]);
+  staffCount[0] = Math.ceil(staffCount[0]);
+  staffCount[1] = Math.ceil(staffCount[1]);
+  staffCount[2] = Math.ceil(staffCount[2]);
   revenue = 20000 * (staffCount[0]+staffCount[1]+staffCount[2]);
   var output = [staffCount,revenue];
+  console.log(revenue);
   return output;
 }  
 function getSchools(schools, year) {
+  var revenueOverTime = [];
+  var initalRevenue = 0;
+  var supportRevenue = 0;
   var originalSchools = schools;
   var currentYear = 0;
   var currentFunds = 0;
   while (currentYear < year) {
     // For Each Year
     
-    currentFunds += getTotalRevenue(schools);
+    initialRevenue = getTotalRevenue(schools);
+    currentFunds += initialRevenue;
     var otherStaffInfo = getOtherStaffInfo(schools);
     console.log("Before: "+currentFunds);
-    currentFunds += otherStaffInfo[1];
+    supportRevenue = otherStaffInfo[1];
+    currentFunds += supportRevenue;
     console.log("After: "+currentFunds);
     var get = generateSchools(schools,currentFunds);
     schools = get[0];
     currentFunds = get[1];
     currentYear += 1;
     schools = age(schools,1);
+    revenueOverTime.push((initialRevenue+supportRevenue)/1000);
   }
+  if (year == 0){
+    revenueOverTime.push(getTotalRevenue(schools));
+  }
+  
+  supportRevenue = getOtherStaffInfo(schools);
+  supportRevenue = supportRevenue[1];
+  generateStatistics(getTotalRevenue(schools),schools.length,supportRevenue,year);
+  generateGraph(revenueOverTime);
+  
   return [schools,currentFunds];
 }
 function age(schools,years){
@@ -121,18 +181,22 @@ function generateSchools(schools,revenueIn) {
   var costPerTeamMemberPerSchool = 30000;
   var trainingTeamSize = 5;
   var maximumTeamMembers = Math.floor(revenueIn / costPerTeamMemberPerSchool);
-  for (var i = 0; revenueIn >= costPerTeamMemberPerSchool * trainingTeamSize & i < Math.floor(maximumTeamMembers/trainingTeamSize); i++) {
+  for (var i = 0; revenueIn >= costPerTeamMemberPerSchool * trainingTeamSize & i < Math.max(1,parseInt(Math.sqrt(Math.sqrt(schools.length))))& i < Math.floor(maximumTeamMembers/trainingTeamSize); i++) {
     schools.push({name:"New School",students:200,teachers:8,age:0,summerTraining:true,PLCSupport:true,expertOnCall:true});
     revenueIn -= trainingTeamSize * costPerTeamMemberPerSchool;
   }
   return [schools,revenueIn];
 }
 window.addEventListener('load', init);
+function generateStatistics(initialRevenue,totalSchools,supportRevenue,year){
+    var outputParagraph = document.getElementById("statistics");
+    outputParagraph.innerHTML = "Year "+year+":<br>License Revenue: $"+initialRevenue+"<br>Total Schools: "+totalSchools+"<br>Support Services Revenue: $"+parseInt(supportRevenue);
+}
 function init(){
-document.getElementById("output").innerHTML = example(0);
+//document.getElementById("output").innerHTML = example(0);
 document.getElementById("yearInput").value = 0;
 document.getElementById("yearSubmit").addEventListener("click", buttonSubmit);
 document.getElementById("increase").addEventListener("click", increase);
 document.getElementById("decrease").addEventListener("click", decrease);
-console.log("hi")
+buttonSubmit();
 }

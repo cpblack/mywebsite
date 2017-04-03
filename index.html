@@ -2,18 +2,24 @@
 <title>Polished</title>
 <link rel="icon" href="cb.png">
 <script src="secure.js"></script>
+<script src="createGraph.js"></script> 
 <script src="predictschools.js"></script>
+<script src="Chart.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body onload="">
- <div id="main">
-  <p class="textScroll" style="height:30%;"id="output">Loading...</p> 
-  <div id="year" style="display:inline-block;overflow:hidden;">
+ <div id="main" style="">
+  <div id="year" style="display:inline-block;overflow:hidden;margin-bottom:20px;">
    <p>Year:</p>
-   <input type="number" min="0" max="150" id="yearInput"/>
+   <input type="number" style="width:60px;" min="0" max="150" id="yearInput"/>
    <button id="yearSubmit">Submit</button>
    <button id="increase">+</button>
    <button id="decrease">-</button>
+  </div>
+  <p id="statistics">Loading...</p>
+  <div hidden id="tableDiv"></div>
+  <div id="graphDiv">
+  <canvas id="graph" style="height:20%;"></canvas>
   </div>
  </div>
 
