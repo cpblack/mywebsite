@@ -1,4 +1,4 @@
-
+var maxYear = 150;
 function getBaseSchools() {
 var baseSchools = [{name:"AISU",students:2000,age:3,teachers:80,summerTraining:false,PLCSupport:false,expertOnCall:false}]
 return JSON.parse(JSON.stringify(baseSchools));
@@ -78,12 +78,16 @@ table.setAttribute("align","center");
 //setLeftovers(calc[1]);
 }
 function increase(){ 
-    document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) + 1;
-    buttonSubmit();
+    if (document.getElementById("yearInput").value < maxYear){
+      document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) + 1;
+      buttonSubmit();
+    }
 }
 function decrease(){
-    document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) - 1;
-    buttonSubmit();
+    if (document.getElementById("yearInput").value > 1) {
+      document.getElementById("yearInput").value = parseInt(document.getElementById("yearInput").value) - 1;
+      buttonSubmit();
+    }
 }
 function example(years){
   console.log(years);
