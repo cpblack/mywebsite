@@ -60,7 +60,7 @@ function setLeftovers(input){
 }
 function buttonSubmit(){
 var value = document.getElementById("yearInput").value;
-value = Math.min(Math.max(document.getElementById("yearInput").value,0),150);
+value = Math.min(Math.max(document.getElementById("yearInput").value,1),150);
 document.getElementById("yearInput").value = value;
 var calc = example(value);
 console.log(calc[0]);
