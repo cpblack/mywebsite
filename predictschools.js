@@ -139,6 +139,8 @@ function getSchools(schools, year) {
   var originalSchools = schools;
   var currentYear = 0;
   var currentFunds = 0;
+  var supportRevenueLog;
+  var otherStaffInfoLog;
   while (currentYear < year) {
     // For Each Year
     
@@ -154,10 +156,10 @@ function getSchools(schools, year) {
     currentFunds = get[1];
     currentYear += 1;
     schools = age(schools,1);
-    revenueOverTime.push((initialRevenue+supportRevenue)/1000);
-  }
-  if (year == 0){
-    revenueOverTime.push(getTotalRevenue(schools));
+    supportRevenue = otherStaffInfo[1];
+    otherStaffInfoLog = getOtherStaffInfo(schools);
+    supportRevenueLog = otherStaffInfoLog[1];
+    revenueOverTime.push((initialRevenue+supportRevenueLog)/1000);
   }
   
   supportRevenue = getOtherStaffInfo(schools);
