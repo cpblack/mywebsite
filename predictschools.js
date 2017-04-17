@@ -187,7 +187,7 @@ function generateSchools(schools,revenueIn) {
   var costPerTeamMemberPerSchool = 30000;
   var trainingTeamSize = 5;
   var maximumTeamMembers = Math.floor(revenueIn / costPerTeamMemberPerSchool);
-  for (var i = 0; revenueIn >= costPerTeamMemberPerSchool * trainingTeamSize & i < Math.max(1,parseInt(Math.sqrt(Math.sqrt(schools.length))))& i < Math.floor(maximumTeamMembers/trainingTeamSize); i++) {
+  for (var i = 0; revenueIn >= costPerTeamMemberPerSchool * trainingTeamSize & i < Math.max(1,parseInt(Math.sqrt(schools.length)))& i < Math.floor(maximumTeamMembers/trainingTeamSize); i++) {
     schools.push({name:"New School",students:200,teachers:8,age:0,summerTraining:true,PLCSupport:true,expertOnCall:true});
     revenueIn -= trainingTeamSize * costPerTeamMemberPerSchool;
   }
