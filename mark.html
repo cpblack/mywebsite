@@ -1,0 +1,27 @@
+<head>
+<title>Polished</title>
+<link rel="icon" href="cb.png">
+<script src="secure.js"></script>
+<script src="createGraph.js"></script> 
+<script src="markschools.js"></script>
+<script src="Chart.js"></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="button.css">
+</head>
+<body onload="">
+ <div id="main" style="">
+  <div id="year" style="display:inline-block;overflow:hidden;margin-bottom:20px;">
+   <p>Year:</p>
+   <input type="number" style="width:60px;border:0;background-color:#ffffff;color:#72767b;width:50px;height:26px;" min="0" max="150" id="yearInput"/>
+   <button class="myButton" id="yearSubmit">Submit</button>
+   <button class="myButton" id="increase">+</button>
+   <button class="myButton" id="decrease">-</button>
+  </div>
+  <p id="statistics">Loading...</p>
+  <div hidden id="tableDiv"></div>
+  <div id="graphDiv" style="pointer-events:none;">
+  <canvas id="graph" style="height:20%;pointer-events:none;"></canvas>
+  </div>
+ </div>
+
+</body>
