@@ -1,4 +1,5 @@
 var maxYear = 150;
+var baseOperations = 850000;
 function duplicate(object) {
 return JSON.parse(JSON.stringify(object));
 }
@@ -26,10 +27,19 @@ function decrease(){
 }
 function run(years){
   //console.log(years);
+  var graphOutput = [];
+  var lifetimeProfit = 0;
+  for (var f = 0; f < years + 1; f++) {
+      var tempC = getRevenueCostSet(getSchools(f));
+      var total = tempC[0]+tempC[1]-tempC[2]-tempC[3] + 200000 - baseOperations;
+      lifetimeProfit += total;
+      graphOutput.push(total);
+  }
+  generateGraph(graphOutput);
   var get = getSchools(years);
   var revenue = getRevenueCostSet(get);
   addAISURevenue(revenue);
-  generateStatistics(years +1,revenue,getSchoolCount(get));
+  generateStatistics(years +1,revenue,getSchoolCount(get),lifetimeProfit);
   return revenue;
 }
 function addAISURevenue(revenue){
@@ -52,7 +62,6 @@ function getRevenueCost(schools){
     var furtherRetention = 25;
     var consultingMargin = 40;
     var softwareMargin = 95;
-    var baseOperations = 850000;
     var firstYearConsultingRevenue = 150000;
     var consecutiveYearConsultingRevenue = 75000;
     
@@ -119,10 +128,10 @@ function age(schools,years){
 
 
 window.addEventListener('load', init);
-function generateStatistics(year,revenueCost,schoolCount){
+function generateStatistics(year,revenueCost,schoolCount,lifetimeProfit){
     var outputParagraph = document.getElementById("statistics");
     var totalSchools = schoolCount;
-    outputParagraph.innerHTML = "Year "+year+"<br>Total Schools: "+totalSchools+"<br>Consulting Revenue: $"+revenueCost[0].toLocaleString('en')+"<br>Licensing Revenue: $"+parseInt(revenueCost[1]).toLocaleString('en')+"<br>Consulting Fees: $"+parseInt(revenueCost[2]).toLocaleString('en')+"<br> Licensing Fees: $"+parseInt(revenueCost[3]).toLocaleString('en');
+    outputParagraph.innerHTML = "Year "+year+"<br>Total Schools: "+totalSchools+"<br>Consulting Revenue: $"+revenueCost[0].toLocaleString('en')+"<br>Base Operations: $"+parseInt(baseOperations).toLocaleString('en')+"<br>Licensing Revenue: $"+parseInt(revenueCost[1]).toLocaleString('en')+"<br>Consulting Fees: $"+parseInt(revenueCost[2]).toLocaleString('en')+"<br> Licensing Fees: $"+parseInt(revenueCost[3]).toLocaleString('en')+"<br>Total Revenue: $"+parseInt(revenueCost[0]+revenueCost[1]-revenueCost[2]-revenueCost[3]- baseOperations).toLocaleString('en')+"<br>Lifetime Profit: $"+parseInt(lifetimeProfit).toLocaleString("en");
 }
 function init(){
 //document.getElementById("output").innerHTML = example(0);
