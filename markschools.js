@@ -1,5 +1,5 @@
 var maxYear = 150;
-var baseOperations = 850000;
+var baseOperations = 550000;
 function duplicate(object) {
 return JSON.parse(JSON.stringify(object));
 }
@@ -38,12 +38,15 @@ function run(years){
   generateGraph(graphOutput);
   var get = getSchools(years);
   var revenue = getRevenueCostSet(get);
-  addAISURevenue(revenue);
+  addAISURevenue(revenue,years);
   generateStatistics(years +1,revenue,getSchoolCount(get),lifetimeProfit);
   return revenue;
 }
-function addAISURevenue(revenue){
+function addAISURevenue(revenue,year){
     revenue[0] += 200000;
+    if (year > 0) {
+        revenue[1] += 22500;
+    }
     return revenue;
 }
 
@@ -61,8 +64,8 @@ function getRevenueCost(schools){
     var retention = [100,90,75,50,25];
     var furtherRetention = 25;
     var consultingMargin = 40;
-    var softwareMargin = 95;
-    var firstYearConsultingRevenue = 150000;
+    var softwareMargin = 40;
+    var firstYearConsultingRevenue = 250000;
     var consecutiveYearConsultingRevenue = 75000;
     
     
@@ -70,7 +73,7 @@ function getRevenueCost(schools){
     var softwareRevenue = 0;
     var consultingCost = 0;
     var softwareCost = 0;
-    //console.log(schools);
+    console.log(schools);
     if (true || schools != null && schools.quantity != null && Number.isInteger(schools.quantity)&& schools.age != null && Number.isInteger(schools.age)){
         //console.log(schools.year);
         if (schools.year < 1){
@@ -85,7 +88,7 @@ function getRevenueCost(schools){
         } else {
             tempRetention = furtherRetention;
         }
-        softwareRevenue = softwareLicenseRevenue * (tempRetention / 100);
+        softwareRevenue = softwareLicenseRevenue * (tempRetention / 100) * schools.quantity;
         softwareCost = softwareRevenue * ((100 - softwareMargin)/100);
         }
     return [consultingRevenue,softwareRevenue,consultingCost,softwareCost];
@@ -110,7 +113,7 @@ function getSchools(year) {
   while (currentYear < year + 1) {
      if (currentYear > 0){
          var quantity = 3 * currentYear;
-        var temp = {year:year,quantity:quantity};
+        var temp = {year:0,quantity:quantity};
         age(schools,1);
         schools.push(temp);
      }
