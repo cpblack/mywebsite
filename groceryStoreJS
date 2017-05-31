@@ -30,7 +30,7 @@ function Shopper(name, age, member) {
 var patricia = Shopper("Patricia",45,true);
 var thomas = Shopper("Thomas",24,false);
 patricia.addItem("apple");
-patricia.addItem("wood");
+patricia.addItem("ketchup");
 thomas.addItem("chips");
 thomas.addItem("tomato");
 patricia.fight(thomas);
