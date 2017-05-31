@@ -11,8 +11,8 @@
 }
 img {
   float: left;
-  margin: 10px;
-  
+  margin: 20px;
+  height: 300px;
 }
 a {
   text-decoration: none;
