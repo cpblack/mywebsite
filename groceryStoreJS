@@ -9,13 +9,17 @@ function Shopper(name, age, member) {
         console.log(this.name+" beat up "+otherShopper.name);
         this.cart = this.cart.concat(otherShopper.cart);
         otherShopper.cart = [];
+        return this;
       } else if (this.age > otherShopper.age){
         console.log(this.name+" lost to "+otherShopper.name);
         otherShopper.cart = otherShopper.cart.concat(this.cart);
         this.cart = [];
+        return otherShopper;
       } else if (this.age === otherShopper.age){
         console.log(this.name+" tied with "+otherShopper.name);
+        return undefined;
       } else {
+        return null;
         console.log("Fight Error: "+this.name+", "+otherShopper.name);
       }
     }
