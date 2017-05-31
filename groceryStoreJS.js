@@ -48,6 +48,8 @@ thomas.addItem("chips");
 thomas.addItem("tomato");
 patricia.printCart();
 thomas.printCart();
+console.log("");
 patricia.fight(thomas);
+console.log("");
 patricia.printCart();
 thomas.printCart();
