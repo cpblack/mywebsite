@@ -2,7 +2,7 @@
 function Shopper(name, age, member) {
     this.name = name;
     this.age = age;
-    this.member = member;
+    this.member = member || false;
     this.cart = [];
     this.fight = function (otherShopper) {
         if (this.age < otherShopper.age) {
@@ -40,8 +40,9 @@ function Shopper(name, age, member) {
         console.log(this.name + "'s cart: " + this.cartString());
     }
 }
+
 var patricia = new Shopper("Patricia", 45, true);
-var thomas = new Shopper("Thomas", 24, false);
+var thomas = new Shopper("Thomas", 24);
 patricia.addItem("apple");
 patricia.addItem("ketchup");
 thomas.addItem("chips");
