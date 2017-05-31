@@ -19,6 +19,9 @@ function Shopper(name, age, member) {
         console.log("Fight Error: "+this.name+", "+otherShopper.name);
       }
     }
+    this.addItem = function(name){
+        this.cart.push(name);
+    }
 }
 var patricia = Shopper("Patricia",45,true);
 var thomas = Shopper("Thomas",24,false);
