@@ -26,6 +26,16 @@ function Shopper(name, age, member) {
     this.addItem = function(name){
         this.cart.push(name);
     }
+    this.cartString = function(){
+        var output = "";
+        for (int i = 0; i < this.cart.length; i++){
+            if (output != "") {
+                output += ", ";
+            }
+            output += this.cart[i];
+        }
+        return output;
+    }
 }
 var patricia = new Shopper("Patricia",45,true);
 var thomas = new Shopper("Thomas",24,false);
@@ -34,3 +44,5 @@ patricia.addItem("ketchup");
 thomas.addItem("chips");
 thomas.addItem("tomato");
 patricia.fight(thomas);
+console.log("Patricia's Cart: "+patricia.cartString());
+console.log("Thomas's Cart: "+thomas.cartString());
