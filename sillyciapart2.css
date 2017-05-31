@@ -11,6 +11,8 @@
 }
 img {
   float: left;
+  margin: 10px;
+  
 }
 a {
   text-decoration: none;
