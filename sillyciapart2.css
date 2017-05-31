@@ -1,3 +1,6 @@
+body {
+  padding: 50px 20%;
+}
 .headline {
   text-align: center;
   font-family: georgia;
@@ -23,4 +26,8 @@ a:hover {
 }
 p {
   line-height: 25px;
+  font-size: 20px;
+}
+li {
+  font-size: 20px;
 }
