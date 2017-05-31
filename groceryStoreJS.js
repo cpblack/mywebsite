@@ -36,13 +36,17 @@ function Shopper(name, age, member) {
         }
         return output;
     }
+    this.printCart = function(){
+        console.log(this.name+"'s cart: "+this.cartString());
+    }
 }
-var patricia = new Shopper("Patricia",45,true);
 var thomas = new Shopper("Thomas",24,false);
 patricia.addItem("apple");
 patricia.addItem("ketchup");
 thomas.addItem("chips");
 thomas.addItem("tomato");
+patricia.printCart();
+thomas.printCart();
 patricia.fight(thomas);
-console.log("Patricia's Cart: "+patricia.cartString());
-console.log("Thomas's Cart: "+thomas.cartString());
+patricia.printCart();
+thomas.printCart();
