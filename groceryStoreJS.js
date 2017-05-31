@@ -40,6 +40,7 @@ function Shopper(name, age, member) {
         console.log(this.name+"'s cart: "+this.cartString());
     }
 }
+var patricia = new Shopper("Patricia",45,true);
 var thomas = new Shopper("Thomas",24,false);
 patricia.addItem("apple");
 patricia.addItem("ketchup");
