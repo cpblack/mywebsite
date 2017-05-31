@@ -1,6 +1,7 @@
 .headline {
-text-align: center;
-color: DarkGreen;
+  text-align: center;
+  color: DarkGreen;
+  font-family: georgia;
 }
 .headline header {
 
@@ -9,5 +10,5 @@ color: DarkGreen;
 
 }
 img {
-float: left;
+  float: left;
 }
