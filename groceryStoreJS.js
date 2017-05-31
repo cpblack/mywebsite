@@ -28,7 +28,7 @@ function Shopper(name, age, member) {
     }
     this.cartString = function(){
         var output = "";
-        for (int i = 0; i < this.cart.length; i++){
+        for (var i = 0; i < this.cart.length; i++){
             if (output != "") {
                 output += ", ";
             }
