@@ -12,10 +12,12 @@
   width: 30%;
 }
 .columntext {
+  display: inline;
   color: DarkGrey
   font-size: 20px;
 }
 .columnheader {
+  display: block-inline;
   font-size: 30px;
   text-align: center;
 }
