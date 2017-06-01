@@ -1,0 +1,18 @@
+.papername {
+  color: DarkGrey;
+  font-size: 60px;
+}
+.headline {
+  font-size: 50px;
+}
+.column {
+  display: inline-block;
+  width: 30%;
+}
+.columntext {
+  color: DarkGrey
+  font-size: 20px;
+}
+.columnheader {
+  font-size: 30px;
+}
