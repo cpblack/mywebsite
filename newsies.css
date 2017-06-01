@@ -21,3 +21,6 @@
   font-size: 30px;
   text-align: center;
 }
+.content {
+  display: block;
+}
